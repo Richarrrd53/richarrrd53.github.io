@@ -1,0 +1,595 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    scrollbar-width: 0px;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(.6,0,.4,1);
+    background-color: #d93611;
+}
+
+
+.marquee-container {
+    width: 1366px;
+    height: 1024px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.marquee-content {
+    display: flex;
+    flex-direction: column;
+    transition: all 1s cubic-bezier(.6,0,.4,1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.marquee-item {
+    height: 1024px;
+    width: 1366px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 32px;
+    padding: 0;
+    background-color: #d93611;
+}
+
+.marquee-img {
+    width: 1366px;
+    height: 1024px;
+    overflow: hidden;
+    border-radius: 0;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(.6,0,.6,1.25);
+    scale: 1;
+    object-fit: cover;
+    
+}
+
+
+.marquee-item:nth-child(even) {
+    background-color: #f28b0c;
+}
+.file-input {
+    margin-bottom: 20px;
+    position: absolute;
+    top: 2000px;
+}
+.textarea {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    resize:none;
+    display: flex;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 150px;
+    font-weight: bold;
+    color: #efefef;
+    padding: 0 20px;
+    font-family: 'MyFont';
+    
+}
+.textarea:focus {
+    border: 0;
+    outline: 0;
+}
+
+.span1 {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    resize:none;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 150px;
+    font-weight: bold;
+    color: #efefef;
+    padding: 0 20px;
+    position: relative;
+    font-family: 'MyFont';
+    animation: slideInLeft 1s cubic-bezier(.6,0,.4,1);
+}
+
+.span2 {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    resize:none;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 150px;
+    font-weight: bold;
+    color: #efefef;
+    padding: 0 20px;
+    position: relative;
+    font-family: 'MyFont';
+    animation: slideInRight 1s cubic-bezier(.6,0,.4,1);
+}
+
+
+.imgEditorBG {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(70px);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
+    animation: opticityIn 0.3s cubic-bezier(.6,0,.4,1);
+}
+
+.section1 {
+    width: 820px;
+    height: 620px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    animation: zoomIn 0.3s cubic-bezier(.6,0,.4,1);
+
+}
+.section1 .imgA {
+    width: 780px;
+    height: 580px;
+    border-radius: 10px;
+    display: flex;
+    user-select: none;
+    object-fit: cover;
+}
+
+.section2 {
+    width: 400px;
+    height: 280px;
+    margin-top: 30px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+    animation: slideIn 0.3s cubic-bezier(.6,0,.4,1);
+}
+
+.section2 .btn {
+    width: 100%;
+    height: 25%;
+    border: 0;
+    border-bottom: 1px solid #101010;
+    background-color: rgba(255, 255, 255, 0.75);
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+    text-align: left;
+    align-content: center;
+    color:#101010;
+    backdrop-filter: blur(10px);
+    padding-left: 30px;
+}
+.section2 .btn:active {
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+}
+
+#btn4 {
+    border: 0;
+    border-bottom: 0;
+    color: #f4442e;
+}
+
+.btn .icon{
+    width: 42.45px;
+    height: 42.45px;
+    position: absolute;
+    top: 14.15px;
+    left: 343.4px;
+}
+
+.imgListBG{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(100px);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    animation: opticityIn 0.3s cubic-bezier(.6,0,.4,1);
+}
+
+.imgListBG .section1 {
+    width: 800px;
+    height: 800px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(60px);
+    border-radius: 50px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    animation: scaleIn 0.4s;
+}
+
+.imgListBG .section1 .title{
+    width: 100%;
+    height: 100px;
+    color: #101010;
+    text-align: center;
+    align-content: center;
+    font-family: 'Taipei';
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.imgListBG .section1 .content{
+    width: 700px;
+    height: 650px;
+    background-color: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.preViewImg{
+    width: 633px;
+    height: 475px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.subtitle {
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    color: #444444;
+    text-align: left;
+    align-content: center;
+    font-family: 'Taipei';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.preViewSection1 .subtitle{
+    text-align: center;
+    white-space: break-spaces;
+    line-height: 1.5;
+    height: 100px;
+}
+
+.preViewBtns{
+    width: 800px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: flex-start;
+}
+
+.preViewBtn1 {
+    width: 400px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-family: 'Taipei';
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom-left-radius: 50px;
+}
+
+.preViewBtn1:active,.preViewBtn2:active{
+    background-color: rgba(150, 150, 150, 0.25);
+}
+
+.preViewBtn2 {
+    width: 400px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    color: #101010;
+    font-family: 'Taipei';
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom-right-radius: 50px;
+}
+
+#subtitle2 {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+    align-content: center;
+}
+
+.imageListContainer{
+    width: 700px;
+    height: auto;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageListContainer .imgItem{
+    width: 700px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(50px);
+    padding-left: 110px;
+    border: 0;
+    color: #101010;
+    font-family: 'Taipei';
+    font-weight: bold;
+    font-size: 26px;
+    user-select: none;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imageListContainer .imgItem:active{
+    background-color: rgba(150, 150, 150, 0.25);
+}
+
+#imageListContainer2 .imgItem {
+    font-size: 28px;
+}
+
+
+.imgItem .imgIcon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    object-fit: cover;
+}
+
+.imgItem .imgIcon2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 30px;
+    top: 35px;
+}
+
+.imgItem .imgInfo {
+    font-size: 18px;
+    color: #585858;
+    margin-top: 20px;
+}
+
+
+@keyframes opticityIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes opticityOut {
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    from{
+        scale: 1.58;
+        transform: translateY(100px);
+    }
+    to{
+        scale: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes zoomOut {
+    from{
+        scale: 1;
+        transform: translateY(0px);
+    }
+    to{
+        scale: 1.75;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateY(300px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideOut {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(300px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-150%);
+
+    }
+    to {
+        transform: translateX(0);
+    }
+  }
+  
+@keyframes slideInRight {
+    from {
+        transform: translateX(150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-150%);
+    }
+  }
+  
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(150%);
+    }
+}
+
+@font-face {
+    font-family: 'Taipei';
+    src: url('../font/Taipei-Bold.woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../font/SourceHanSerifTW-Heavy.woff');
+    font-display: swap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+        
+    from { transform: scale(0); opacity: 0; animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);}
+    to { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);}
+    
+}
+
+@keyframes scaleOut {
+    from { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);}
+    to { transform: scale(0); opacity: 0; animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);}
+}
+
+@keyframes scaleIn2 {
+    from { transform: scale(2); opacity: 0; animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);}
+    to { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);}
+}
+
+@keyframes scaleOut2 {
+    from { transform: scale(1); opacity: 1; animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);}
+    to { transform: scale(2); opacity: 0; animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);}
+}
+
+@keyframes bounceInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-300%) translateY(-300%) scale(0.3);
+        animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);
+    }
+    to {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.6, 0, 0.2, 1.25);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceOutRight {
+    from {
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);
+    }
+    to {
+        transform: translateX(300%) translateY(300%) scale(0.3);
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.6, -0.25, 0.6, 1);
+    }
+}
+
+@keyframes flipInX {
+    from {
+    transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+    opacity: 0;
+    }
+    to {
+    transform: perspective(400px);
+    opacity: 1;
+    }
+}
+@keyframes flipOutX {
+    from {
+        transform: perspective(400px);
+    }
+    to {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+    }
+}
+
